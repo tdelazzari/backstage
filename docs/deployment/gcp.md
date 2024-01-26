@@ -61,7 +61,7 @@ Using Cloud Shell, grant the service account access to the database password you
 
 ```shell
 gcloud secrets add-iam-policy-binding POSTGRES_PASSWORD \
-    --member=serviceAccount:readonly-secrets@PROJECT_ID.iam.gserviceaccount.com \
+    --member=serviceAccount:sa-backstage@PROJECT_ID.iam.gserviceaccount.com \
     --role='roles/secretmanager.secretAccessor'
 ```
 
