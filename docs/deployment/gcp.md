@@ -128,7 +128,7 @@ spec:
             - name: POSTGRES_PASSWORD
             value: "POSTGRES_PASSWORD"
         - name: cloud-sql-proxy
-          image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.6.1
+          image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:latest
           args:
             - "--structured-logs"
             - "--port=5432"
@@ -183,7 +183,7 @@ spec:
       - image: gcr.io/PROJECT_ID/backstage:1.0.0
         ports:
           - containerPort: 7007
-      - image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.6.1
+      - image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:latest
         args:
             - "--structured-logs"
             - "--port=5432"
