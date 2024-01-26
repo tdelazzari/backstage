@@ -155,12 +155,13 @@ Finally, you can create the Backstage Kubernetes [service](https://backstage.io/
 
 GKE provides a good level of abstraction if you still want to configure and tweak your own Kubernetes cluster, for example: changing machine types, etc. But if instead you are looking for a more Serverless solution, you should try running Backstage on [Cloud Run](https://cloud.google.com/run).
 
-Navigate to Cloud Run in the [Google Cloud console](https://console.cloud.google.com), and create a new Backstage service. Point to the `gcr.io` container image in your Artifact Registry. 
-Here is the configuration used for this guide:
+Navigate to Cloud Run in the [Google Cloud console](https://console.cloud.google.com), and create a new Cloud Run service. Point to the `gcr.io` container image in your Artifact Registry. 
+You can tweak the configuration depending on your needs. Here is the configuration used for this guide:
+- Name: `backstage` 
 - Region: `us-east1`
 - Container port: `7007`
 - Cloud SQL connection: select your Cloud SQL instance in the list
-- Security & service account: `sa-backstage`
+- Service account: `sa-backstage`
 - Inject `POSTGRES_PASSWORD` as environment variable from Secret Manager
 
 Load the Cloud SQL Auth Proxy as a sidecar. In Cloud Shell, create a new file `backstage-cloudrun.yaml`. Copy and paste the block of text below, replacing `PROJECT_ID` and `CLOUD_SQL_REGION` with your values:
@@ -192,7 +193,7 @@ spec:
 
 Update your Cloud Run service using this command:
 
-```
+```shell
 gcloud run services replace backstage-cloudrun.yaml
 ```
 
