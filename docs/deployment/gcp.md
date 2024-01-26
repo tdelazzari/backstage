@@ -10,7 +10,7 @@ GKE is a service provided by Google Cloud that simplifies the deployment, manage
 Cloud Run is a more streamlined, serverless option that is also suitable for Backstage.
 
 You will need access to a Google Cloud project with the required permissions to create a GKE cluster or a Cloud Run service.
-This guide will also use the following Google Cloud services, so make sure you enabled them in your project:
+This guide will also use the following Google Cloud services, so make sure you enable them in your project:
 - [Articact Registry](https://cloud.google.com/artifact-registry) to store the Backstage container image.
 - [Cloud SQL](https://cloud.google.com/sql) to create the Backstage database.
 - [Secret Manager](https://cloud.google.com/security/products/secret-manager) to store the database password.
@@ -160,8 +160,8 @@ You can tweak the configuration depending on your needs. Here is the configurati
 - Name: `backstage` 
 - Region: `us-east1`
 - Container port: `7007`
-- Cloud SQL connection: select your Cloud SQL instance in the list
 - Service account: `sa-backstage`
+- Cloud SQL connection: select your Cloud SQL instance in the list
 - Inject `POSTGRES_PASSWORD` as environment variable from Secret Manager
 
 Load the Cloud SQL Auth Proxy as a sidecar. In Cloud Shell, create a new file `backstage-cloudrun.yaml`. Copy and paste the block of text below, replacing `PROJECT_ID` and `CLOUD_SQL_REGION` with your values:
