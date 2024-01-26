@@ -41,7 +41,7 @@ docker tag backstage gcr.io/PROJECT_ID/backstage:1.0.0
 docker push gcr.io/PROJECT_ID/backstage:1.0.0
 ```
 
-## Creating the Backstage database in Cloud SQL
+## Create the Backstage database in Cloud SQL
 
 Navigate to the [Google Cloud console](https://console.cloud.google.com) and create a new Cloud SQL instance. You can tweak the configuration depending on your needs. Here is the configuration used for this guide:
 - Engine and version: `PostgreSQL 15`
@@ -75,7 +75,7 @@ Navigate to the [Google Cloud console](https://console.cloud.google.com) and cre
 
 Once the cluster is up and running, use Cloud Shell to [create the Backstage namespace](https://backstage.io/docs/deployment/k8s#creating-a-namespace).
 
-### Setting up Workload Identity
+### Set up Workload Identity
 
 [Workload identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) federation for GKE allows workloads in your GKE clusters to impersonate Identity and Access Management (IAM) service accounts to access Google Cloud services.
 
