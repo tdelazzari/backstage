@@ -100,7 +100,7 @@ kubectl annotate serviceaccount ksa-backstage \
 In Cloud Shell, create the file `backstage-deployment.yaml`. Copy and paste the block of text below, replacing `PROJECT_ID` and `CLOUD_SQL_REGION` with your values:
 
 ```yaml
-# kubernetes/backstage-deployment.yaml
+# backstage-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -146,7 +146,7 @@ This deployment spec will also load the [Cloud SQL Auth Proxy in a sidecar patte
 In Cloud Shell, run this command to apply the deployment:
 
 ```shell
-kubectl apply -f kubernetes/backstage-deployment.yaml
+kubectl apply -f backstage-deployment.yaml
 ```
 
 Finally, you can create the Backstage Kubernetes [service](https://backstage.io/docs/deployment/k8s/#creating-a-backstage-service) and even an [Ingress resource](https://cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer#creating_an_ingress_resource) (Load Balancer) if you want to provide internal and/or external access to this Backstage installation.
@@ -166,6 +166,7 @@ Here is the configuration used for this guide:
 Load the Cloud SQL Auth Proxy as a sidecar. In Cloud Shell, create a new file `backstage-cloudrun.yaml`. Copy and paste the block of text below, replacing `PROJECT_ID` and `CLOUD_SQL_REGION` with your values:
 
 ```yaml
+# backstage-cloudrun.yaml
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
