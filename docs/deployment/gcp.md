@@ -155,7 +155,7 @@ Finally, you can create the Backstage Kubernetes [service](https://backstage.io/
 
 GKE provides a good level of abstraction if you still want to configure and tweak your own Kubernetes cluster, for example: changing machine types, etc. But if instead you are looking for a more Serverless solution, you should try running Backstage on [Cloud Run](https://cloud.google.com/run).
 
-Navigate to Cloud Run in the [Google Cloud console](https://console.cloud.google.com), and create a new Backstage service. Point to the gcr.io container image in your Artifact Registry. 
+Navigate to Cloud Run in the [Google Cloud console](https://console.cloud.google.com), and create a new Backstage service. Point to the `gcr.io` container image in your Artifact Registry. 
 Here is the configuration used for this guide:
 - Region: `us-east1`
 - Container port: `7007`
